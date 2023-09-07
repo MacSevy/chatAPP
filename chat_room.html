@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viemport" content="width=device-width, initial-scale=1.0">
+<link href="chat_room.css" rel="stylesheet"/>
+<title>sm'HEI's</title>
+</head>
+<body>
+<!--Menu-->
+<nav class="navigation">
+    <!--<h1>Menu</h1>-->
+    <ul>
+        <li class ="list active">
+        <b></b>
+        <b></b>
+        <a href="#">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="title">Home</span> 
+        </a>
+        </li>
+    </ul>
+    <ul>
+        <li class ="list">
+            <b></b>
+            <b></b>
+        <a href="#">
+            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+            <span class="title">Message</span> 
+        </a>
+        </li>
+    </ul>
+    <ul>
+        <li class ="list">
+            <b></b>
+            <b></b>
+        <a href="#">
+            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+            <span class="title">Settings</span> 
+        </a>
+        </li>
+    </ul>
+    <ul>
+        <li class ="list">
+            <b></b>
+            <b></b>
+        <a href="#">
+            <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+            <span class="title">Help</span> 
+        </a>
+        </li>
+    </ul>
+    <ul>
+        <li class ="list">
+            <b></b>
+            <b></b>
+        <a href="#">
+            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+            <span class="title">Password</span> 
+        </a>
+        </li>
+    </ul>
+    <ul>
+        <li class ="list">
+            <b></b>
+            <b></b>
+        <a href="#">
+            <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+            <span class="title">Sign Out</span> 
+        </a>
+        </li>
+    </ul>
+</nav>
+<div class="toggle">
+
+    <ion-icon name="menu-outline" class="open"></ion-icon>
+    <ion-icon name="close-outline" class="close"></ion-icon>
+</div>
+<!--Fin menu-->
+
+
+<!--script-->
+<script>
+    
+
+    let menuToggle = document.querySelectorAll('.toggle');
+let navigation = document.querySelectorAll('.navigation');
+
+menuToggle.forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+        this.classList.toggle("active");
+        navigation.forEach(function (nav) {
+            nav.classList.toggle("active");
+        });
+    });
+});
+
+
+    
+
+
+
+    //add active class in selected list items
+    let list = document.querySelectorAll('.list');
+    for (let i = 0; i<list.length; i++){
+        list[i].onclick = function(){
+            let j = 0;
+            while(j<list.length){
+                list[j++].className = 'list';
+            }
+            list[i].className = "list active";
+        }
+    }
+</script>
+<!--Script JS pour afficher les icones-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--Fin script js-->
+</body>
+</html>
