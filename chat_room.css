@@ -7,7 +7,7 @@
     --main-gray: #303841; /*for message*/
 }
 
-}
+
 
 
 /*Body*/
@@ -30,6 +30,21 @@ main{
     display: flex;
     flex-direction: row;
 }
+
+
+.message-sent {
+    margin-top: 3vh;
+
+    text-align: right;
+    color: white; /* Couleur de texte pour les messages envoyés */
+  }
+  
+  .message-received {
+    margin-top: 3vh;
+    text-align: left;
+    color: #fff; /* Couleur de texte pour les messages reçus */
+  }
+  
 
 /*aside*/
 
@@ -77,6 +92,7 @@ input[type="text"]{
     margin-left: 5px;
     margin-top:27%;
     font-size: 2em;
+    color: var(--main-purple);
 }
 
 .image ion-icon:hover, .send ion-icon:hover{
@@ -116,7 +132,9 @@ input[type="text"]{
     border-left: 5px solid var(--main-purple);
     background-color: var(--main-purple);
     transition: width 0.5s;
+    transition: color O.5s ease;
     overflow-x: hidden;
+    overflow-y: hidden;
 
 }
 
@@ -234,6 +252,7 @@ nav ul li a .icon ion-icon{
 }
 
 
+
 nav ul li a .title{
     position: relative;
     display: block;
@@ -308,9 +327,32 @@ nav ul li a .title{
         font-size: 2em;
     }
 
-    
+
+    .image ion-icon:hover, .send ion-icon:hover{
+        margin-left: 5px;
+        margin-top:-30%;
+        font-size: 2em;
+    }
+
+.navigation{
+    overflow-y: scroll;
+    z-index: 2;
+} 
+
+
+.navigation.active{
+    width: 200px;
+    z-index: 2;
+
+}
+
+h1{
+    z-index: 0;
+    color:none;
+
+}
 input[type="text"]{
-    margin-top:-2%;
+    margin-top:-3%;
     border-radius: 5px;
     height:2em;
     width:80%;
