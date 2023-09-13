@@ -18,6 +18,21 @@
     font-family: "Poppins", sans-serif;
 }
 
+a {
+    text-decoration: none; /* Remove underline */
+    display: none; /* Use the parent element's color (default or specified) */
+}
+
+.login a h3{
+    color:var(--main-purple);
+}
+
+/* Add this CSS to hide the "Sign Out" text */
+.login.send a{
+    display: none;
+}
+
+
 body{
     overflow: hidden;
     min-height: 100vh;

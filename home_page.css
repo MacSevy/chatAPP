@@ -11,6 +11,12 @@
 
 
 /*Body*/
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent element's color (default or specified) */
+}
+
 *{  
     margin: 0;
     padding: 0;

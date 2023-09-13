@@ -1,5 +1,19 @@
 // Connect to the Socket.io server
 
+
+/*function that clear the element when an event is activated*/
+function clearInputField(eventListener,elementClassName){
+    var inputElementClass = document.getElementsByClassName(elementClassName);
+    for (var i=0; i<inputElementClass.length; i++){
+        inputElementClass[i].addEventListener(eventListener, function(){
+            var selectInputField = this.parentElement.querySelector("."+elementClassName);
+            selectInputField.value = "";
+        });
+    }
+}
+
+clearInputField("click","text");
+
 const socket = io('http://localhost:3000');
 const messageInput = document.getElementById('message-input');
 const sendButton = document.getElementById('send-button');
@@ -21,7 +35,7 @@ sendButton.addEventListener('click', () => {
 
     // Create elements for username and message text
     const userNameElement = document.createElement('span');
-    userNameElement.textContent = message.userName;
+    userNameElement.textContent = "Me";
 
     const textElement = document.createElement('p');
     textElement.textContent = message.text;
