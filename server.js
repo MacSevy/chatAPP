@@ -1,3 +1,4 @@
+
 //import des bibliothèques nécessaires
 const express = require('express');
 const http = require('http');
@@ -6,7 +7,7 @@ const cors = require('cors');
 const corsOptions = { origin: "*" };
 
 
-//setting the server
+//setting the server class
 class Server {
   constructor() {
     //setting the server
@@ -44,6 +45,9 @@ class Server {
 
 }
 
+
+
+/*SCRIPT*/
 const chatServer = new Server();
 chatServer.listenEventServer();
 chatServer.installServer(3000, ipAddress = '192.168.1.95');

@@ -95,8 +95,6 @@ function detectFile(elementClassName) {
   }
 }
 
-// Usage example: Call detectFile to handle file uploads
-detectFile("file-input");
 
 
 /*
@@ -201,19 +199,26 @@ socket.on("chat-message",(message)=>{
 
 
 /*SCRIPT*/
-
-
-
-
-
-
-
+detectFile("file-input");
 clearInputField("click","text");
 sendMessageLink("send-button");
 displayReceiveMessage(userName);
 
 
-/*
+
+
+
+/*TASK TO DO 
+#######################################
+->Problème une fois que les messages prennent tous l'écran on peut plus voir les messages suivants
+->Reformat la taille des images de sorte à ce qu'elle au maximum d'une certaine taile
+->reformat les conatainers pour que cela paraisse plus beau (CSS)
+
+
+
+
+
+###########################################################################################################
 Bug meet in this project:
 ->when you change the name of the js file in the html file but does not reload the website
    ->Quit the window and relaunch this window
