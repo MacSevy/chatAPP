@@ -15,8 +15,15 @@
     <div id="messages"></div>
 </div>
 <div class="msg">
+    <!--text-->
     <input type="text" value="send a message" class="text" id ="message-input">
+    <!--image-->
+    <input type="file" class="file-input" id="file-input" accept="image/*">
+    <!--label link the input file to the ion icon file-->
+    <label for="file-input" class="image-icon">
     <span class="image"><ion-icon name="image-outline"></ion-icon></span>
+    </label>
+    <!--send-->
     <span class="send" id="send-button"><ion-icon name="send-outline"></ion-icon></span>
 </div>
 </aside>
