@@ -6,5 +6,3 @@ function generateRandomUsername() {
     const randomSuffix = Math.floor(Math.random() * 1000); // Ajoutez un suffixe numérique aléatoire pour plus d'unicité
     return `${randomAdjective}-${randomNoun}-${randomSuffix}`;
   }
-
-  

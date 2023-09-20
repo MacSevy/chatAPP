@@ -27,10 +27,6 @@ a {
     color:var(--main-purple);
 }
 
-/* Add this CSS to hide the "Sign Out" text */
-.login.send a{
-    display: none;
-}
 
 
 body{
@@ -96,6 +92,19 @@ main{
 }
 
 
+.file-input{
+    display: none;
+}
+
+
+/*
+Cursor pointer show when the mouse is over an element
+*/
+.image-icon{
+    cursor: pointer;
+}
+
+
 input[type="text"]{
     margin-top:1%;
     border-radius: 5px;
@@ -107,6 +116,7 @@ input[type="text"]{
     margin-left: 5px;
     margin-top:27%;
     font-size: 2em;
+    cursor: pointer;
     color: var(--main-purple);
 }
 
