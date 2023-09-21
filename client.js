@@ -19,7 +19,8 @@ const userName = generateRandomUsername(); // Add a username
 /*function that clear the element when an event is activated*/
 clearInputField = (eventListener,elementClassName)=>{
     var inputElementClass = document.getElementsByClassName(elementClassName);
-    for (var i=0; i<inputElementClass.length; i++){
+    const inputElementClassLength = inputElementClass.length;
+    for (var i=0; i<inputElementClassLength; i++){
         inputElementClass[i].addEventListener(eventListener, function(){
             var selectInputField = this.parentElement.querySelector("."+elementClassName);
             selectInputField.value = "";
@@ -56,6 +57,8 @@ function sendFile(file) {
     userNameElement.textContent = "Me: " + message.userName;
     const imageElement = document.createElement('img');
     imageElement.src = message.fileData;
+    imageElement.width = 100;
+    imageElement.height = 100;
     // Append elements to the container
     sentMessageContainer.appendChild(userNameElement);
     sentMessageContainer.appendChild(imageElement);
@@ -79,8 +82,8 @@ function sendFile(file) {
 // Modify the detectFile function to call sendFile when a file is selected
 function detectFile(elementClassName) {
   const fileInputs = document.getElementsByClassName(elementClassName);
-
-  for (let i = 0; i < fileInputs.length; i++) {
+  const fileInputLength = fileInputs.length;
+  for (let i = 0; i < fileInputLength; i++) {
     const fileInput = fileInputs[i];
 
     fileInput.onchange = function(event) {
@@ -177,7 +180,8 @@ socket.on("chat-message",(message)=>{
         // Create an image element to display the image
         const imageElement = document.createElement("img");
         imageElement.src = message.fileData; // Set the image source
-
+        imageElement.width = 100;
+        imageElement.height = 100;
         // Append the image element to the message container
         messageContainer.appendChild(userNameElement);
         messageContainer.appendChild(imageElement);
@@ -198,7 +202,58 @@ socket.on("chat-message",(message)=>{
 }
 
 
+/*function loop test that test the performance of the socket*/
+// Fonction qui émet un message avec un délai et retourne une promesse
+function testSocket(word, time = 10000) {
+  return new Promise((resolve, reject) => {
+    // Démarrez la minuterie
+    const timePerformance = console.time("testSocket");
+    const message = {
+      userName: "fury-Secret-415",
+      text: word,
+    };
+    
+    // Émettre le message
+    socket.emit("chat-message", message);
+
+    // Planifier l'appel suivant après un délai
+    setTimeout(() => {
+      console.timeEnd("testSocket"); // Arrêtez la minuterie
+      resolve(); // Résolvez la promesse pour indiquer la fin de l'opération
+    }, time); // Délai en millisecondes
+  });
+}
+
+// Fonction pour effectuer le test de messages par seconde
+function testMessagesPerSecond(messagesPerSecond, totalTime) {
+  const interval = 1000 / messagesPerSecond; // Interval en millisecondes
+  const totalMessages = messagesPerSecond * (totalTime / 1000); // Nombre total de messages
+
+  let messagesSent = 0;
+
+  function sendMessages() {
+    if (messagesSent < totalMessages) {
+      testSocket("test").then(() => {
+        messagesSent++;
+        sendMessages();
+      })
+      .catch((error) => {
+        // Cette partie du code s'exécute en cas d'échec de la promesse
+        console.error("Erreur :", error);
+      });
+    }
+  }
+
+  sendMessages();
+}
+
+
+
 /*SCRIPT*/
+// Utilisation pour tester 1000 messages par seconde pendant 10 secondes
+//testMessagesPerSecond(100, 1000000000);
+
+
 detectFile("file-input");
 clearInputField("click","text");
 sendMessageLink("send-button");
@@ -210,9 +265,8 @@ displayReceiveMessage(userName);
 
 /*TASK TO DO 
 #######################################
-->Problème une fois que les messages prennent tous l'écran on peut plus voir les messages suivants
 ->Reformat la taille des images de sorte à ce qu'elle au maximum d'une certaine taile
-->reformat les conatainers pour que cela paraisse plus beau (CSS)
+
 
 
 

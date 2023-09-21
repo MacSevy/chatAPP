@@ -42,10 +42,7 @@ class Server {
       console.log(`server is running on http://${this.ipAddress}:${this.port}/chat_room.html`);
     });
   };
-
 }
-
-
 
 /*SCRIPT*/
 const chatServer = new Server();
