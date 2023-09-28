@@ -1,7 +1,7 @@
 
-/*DECLARATION OF THE VARIABLE*/
+/*DECLARATION OF THE VARIABLES*/
 // Connect to the Socket.io server
-const socket = io("http://192.168.1.95:3000");
+const socket = io("http://172.20.10.5:3000");
 const messageInput = document.getElementById('message-input');
 const sendButton = document.getElementById('send-button');//selctionne l'element id 
 const messagesContainer = document.getElementById('messages');
@@ -201,6 +201,8 @@ socket.on("chat-message",(message)=>{
   });
 }
 
+//adapt the screen in function
+
 
 /*function loop test that test the performance of the socket*/
 // Fonction qui émet un message avec un délai et retourne une promesse
@@ -265,9 +267,7 @@ displayReceiveMessage(userName);
 
 /*TASK TO DO 
 #######################################
-->Reformat la taille des images de sorte à ce qu'elle au maximum d'une certaine taile
-
-
+-Format the screen so that that the screen adapts to the number of message
 
 
 
