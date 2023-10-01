@@ -1,7 +1,7 @@
 
 /*DECLARATION OF THE VARIABLES*/
 // Connect to the Socket.io server
-const socket = io("http://172.20.10.5:3000");
+const socket = io("http://192.168.1.95:3000");
 const messageInput = document.getElementById('message-input');
 const sendButton = document.getElementById('send-button');//selctionne l'element id 
 const messagesContainer = document.getElementById('messages');
@@ -11,7 +11,6 @@ const userName = generateRandomUsername(); // Add a username
 /*EVENT FUNCTION*/
 
 
-// Modify detectFile to accept a callback function
 
 
 

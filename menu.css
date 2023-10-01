@@ -1,0 +1,64 @@
+/*variable couleur*/
+
+:root{
+    --main-white:#fff;
+    --main-purple:#4d5bf9;
+    --main-black:#333;
+    --main-gray: #303841; /*for message*/
+}
+
+
+
+/*Body*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+a {
+    text-decoration: none; /* Remove underline */
+    display: none; /* Use the parent element's color (default or specified) */
+}
+
+
+.login a h3{
+    color:var(--main-purple);
+}
+
+body{
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+/*chat room style*/
+#chat_room_1{
+    background-image: linear-gradient(to bottom right, #FF512F, #DD2476);
+}
+
+#chat_room_2{
+    background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
+}
+
+#chat_room_3{
+    background-image: linear-gradient(to bottom right, #72FFB6, #10D164);
+}
+
+
+
+
+

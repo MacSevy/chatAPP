@@ -9,6 +9,7 @@ const mongoose = require ("mongoose");
 
 
 
+
 //setting the server class
 class Server {
   constructor() {
@@ -46,7 +47,7 @@ class Server {
     this.ipAddress = ipAddress;
     this.server.listen(this.port, this.ipAddress, () => {
       console.log(`server is running on http://${this.ipAddress}:${this.port}/chat_room.html`);
-      console.log(`server is running on http://${this.ipAddress}:${this.port}/login.html`);
+      console.log(`server is running on http://${this.ipAddress}:${this.port}/menu.html`);
     });
   };}
 
@@ -54,4 +55,4 @@ class Server {
 /*SCRIPT*/
 const chatServer = new Server();
 chatServer.listenEventServer();
-chatServer.installServer(3000, ipAddress = "172.20.10.5");
+chatServer.installServer(3000, ipAddress = "192.168.1.95");

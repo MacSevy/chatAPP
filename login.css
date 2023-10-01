@@ -169,8 +169,6 @@ input[type="email"], input[type="password"]{
     
     
     #left #menu #upper .login h1 {
-        color:red;
-        background-color: yellow;
         font-size: 5vh;
         width:34%;
     }

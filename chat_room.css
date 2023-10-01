@@ -69,7 +69,9 @@ main{
 .box{
     width:80%;
     height:93%;
-    color:white;
+    color:rgb(235, 228, 228);
+    background-color: red;
+    overflow-y: auto;
    }
 
 /*receive message*/
